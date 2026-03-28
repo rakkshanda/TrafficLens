@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrafficLens Report — {{ meta.interface }} — {{ start_date }}</title>
+<style>
+  :root { --bg: #0f1117; --card: #1a1d27; --border: #2e3348; --text: #e2e8f0; --dim: #8892a8; --accent: #3b82f6; --green: #22c55e; --yellow: #eab308; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; padding: 2rem; line-height: 1.5; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.1rem; color: var(--dim); margin: 2rem 0 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .meta { color: var(--dim); font-size: 0.85rem; margin-bottom: 2rem; }
+  .meta span { margin-right: 1.5rem; }
+  .meta strong { color: var(--text); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; font-size: 0.85rem; }
+  th { background: var(--border); text-align: left; padding: 0.6rem 0.75rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dim); }
+  td { padding: 0.5rem 0.75rem; border-top: 1px solid var(--border); }
+  tr:hover td { background: rgba(59,130,246,0.04); }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .ip { color: var(--accent); }
+  .bytes-sent { color: var(--green); }
+  .bytes-recv { color: var(--yellow); }
+  .right { text-align: right; }
+  .bar-cell { position: relative; }
+  .bar-fill { position: absolute; top: 0; left: 0; bottom: 0; background: rgba(59,130,246,0.12); border-radius: 2px; }
+  .rank { color: var(--dim); }
+  .gw { font-size: 0.65rem; background: var(--accent); color: #fff; padding: 0.1rem 0.3rem; border-radius: 3px; margin-left: 0.4rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--dim); text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>TrafficLens Scan Report</h1>
+<div class="meta">
+  <span><strong>Date:</strong> {{ start_date }}</span>
+  <span><strong>Interface:</strong> {{ meta.interface }}</span>
+  <span><strong>Subnet:</strong> {{ meta.subnet }}</span>
+  <span><strong>Duration:</strong> {{ meta.duration_seconds }}s</span>
+  <span><strong>Packets:</strong> {{ "{:,}".format(meta.total_packets) }}</span>
+  <span><strong>Bytes:</strong> {{ total_bytes_fmt }}</span>
+  <span><strong>Hosts:</strong> {{ hosts|length }}</span>
+</div>
+
+<h2>Host Inventory</h2>
+{% if hosts %}
+<table>
+  <thead><tr>
+    <th>IP</th><th>MAC</th><th>Hostname</th><th>Manufacturer</th><th>First Seen</th><th>Last Seen</th>
+  </tr></thead>
+  <tbody>
+  {% for ip, h in hosts|dictsort %}
+  <tr>
+    <td class="mono ip">{{ ip }}{% if h.is_gateway %}<span class="gw">GW</span>{% endif %}</td>
+    <td class="mono">{{ h.mac }}</td>
+    <td>{{ h.hostname or '-' }}</td>
+    <td>{{ h.manufacturer or '-' }}</td>
+    <td class="mono">{{ fmt_ts(h.first_seen) }}</td>
+    <td class="mono">{{ fmt_ts(h.last_seen) }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No hosts discovered.</p>
+{% endif %}
+
+<h2>Per-Host Traffic</h2>
+{% if per_host_traffic %}
+<table>
+  <thead><tr>
+    <th>IP</th><th class="right">Sent</th><th class="right">Received</th><th class="right">Connections</th><th>Top Protocol</th>
+  </tr></thead>
+  <tbody>
+  {% for ip, ht in per_host_traffic|dictsort %}
+  <tr>
+    <td class="mono ip">{{ ip }}{% if hosts.get(ip) and hosts[ip].is_gateway %}<span class="gw">GW</span>{% endif %}</td>
+    <td class="right mono bytes-sent">{{ fmt_bytes(ht.bytes_sent) }}</td>
+    <td class="right mono bytes-recv">{{ fmt_bytes(ht.bytes_received) }}</td>
+    <td class="right mono">{{ ht.connection_count }}</td>
+    <td>{{ top_proto(ht) }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No traffic captured.</p>
+{% endif %}
+
+<h2>Protocol Distribution</h2>
+{% if protocol_distribution %}
+<table>
+  <thead><tr>
+    <th>Protocol</th><th class="right">Bytes</th><th class="right">Share</th><th>Bar</th>
+  </tr></thead>
+  <tbody>
+  {% for proto, byte_count in sorted_protocols %}
+  {% set pct = (byte_count / total_proto_bytes * 100) if total_proto_bytes > 0 else 0 %}
+  <tr>
+    <td><strong>{{ proto }}</strong></td>
+    <td class="right mono">{{ fmt_bytes(byte_count) }}</td>
+    <td class="right">{{ "%.1f"|format(pct) }}%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: {{ pct }}%"></div>&nbsp;</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No protocols detected.</p>
+{% endif %}
+
+<h2>Top Talkers (by Bytes)</h2>
+{% if top_talkers_by_bytes %}
+<table>
+  <thead><tr><th>#</th><th>IP</th><th class="right">Total</th></tr></thead>
+  <tbody>
+  {% for ip, total in top_talkers_by_bytes[:20] %}
+  <tr>
+    <td class="rank">{{ loop.index }}</td>
+    <td class="mono ip">{{ ip }}{% if hosts.get(ip) and hosts[ip].is_gateway %}<span class="gw">GW</span>{% endif %}</td>
+    <td class="right mono">{{ fmt_bytes(total) }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<h2>Top Talkers (by Connections)</h2>
+{% if top_talkers_by_connections %}
+<table>
+  <thead><tr><th>#</th><th>IP</th><th class="right">Connections</th></tr></thead>
+  <tbody>
+  {% for ip, count in top_talkers_by_connections[:20] %}
+  <tr>
+    <td class="rank">{{ loop.index }}</td>
+    <td class="mono ip">{{ ip }}{% if hosts.get(ip) and hosts[ip].is_gateway %}<span class="gw">GW</span>{% endif %}</td>
+    <td class="right mono">{{ count }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<h2>Connection Pairs</h2>
+{% if connections %}
+<table>
+  <thead><tr>
+    <th>Source</th><th>Destination</th><th>Port</th><th>Protocol</th><th class="right">Bytes</th><th class="right">Packets</th>
+  </tr></thead>
+  <tbody>
+  {% for c in sorted_connections[:50] %}
+  <tr>
+    <td class="mono ip">{{ c.src_ip }}</td>
+    <td class="mono ip">{{ c.dst_ip }}</td>
+    <td class="mono">{{ c.dst_port }}</td>
+    <td>{{ c.protocol_label }}</td>
+    <td class="right mono">{{ fmt_bytes(c.byte_count) }}</td>
+    <td class="right mono">{{ c.packet_count }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% if connections|length > 50 %}
+<p style="color: var(--dim); font-size: 0.8rem;">Showing top 50 of {{ connections|length }} connections.</p>
+{% endif %}
+{% else %}
+<p>No connections recorded.</p>
+{% endif %}
+
+<footer>Generated by TrafficLens</footer>
+
+</body>
+</html>

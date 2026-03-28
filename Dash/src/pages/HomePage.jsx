@@ -2,72 +2,81 @@ import { Link } from 'react-router-dom';
 import {
   Shield,
   ShieldAlert,
-  Activity,
   Eye,
   BarChart3,
   Globe,
   Zap,
   Lock,
   ArrowRight,
-  CheckCircle2,
+  Terminal,
+  Network,
 } from 'lucide-react';
+import HeroFeed from '../components/HeroFeed';
 
 const FEATURES = [
   {
     icon: ShieldAlert,
-    title: 'Real-Time Threat Detection',
+    title: 'Threat Detection',
     description:
-      'Monitor incoming connection attempts as they happen. Detect brute force attacks, port scans, SQL injection probes, and more -- before they succeed.',
+      'Detect brute force attacks, port scans, exploit probes, and lateral movement as they happen on your network.',
   },
   {
     icon: Eye,
     title: 'Live Intrusion Feed',
     description:
-      'Watch every suspicious connection attempt scroll in real time with threat severity, source IP, target port, and attack classification.',
+      'Watch every connection attempt scroll in real time with severity classification, source IP, and attack type.',
   },
   {
     icon: BarChart3,
-    title: 'Top Attackers Dashboard',
+    title: 'Top Attackers',
     description:
-      'Instantly see which IPs are hitting your system the hardest. Visual bar charts ranked by attempt count and color-coded by threat level.',
+      'Visual charts ranked by attempt count and color-coded by threat level. Instantly see who is targeting you.',
   },
   {
-    icon: Globe,
-    title: 'Geographic Origin Tracking',
+    icon: Network,
+    title: 'Protocol Analysis',
     description:
-      'Identify where attacks are coming from by country. Spot coordinated campaigns from specific regions targeting your infrastructure.',
+      'Deep packet inspection classifies TCP, UDP, HTTP, DNS, SSH, and 20+ protocols with byte-level accuracy.',
   },
   {
     icon: Zap,
-    title: 'Automated Blocking',
+    title: 'Heuristic Engine',
     description:
-      'Threats are automatically classified and blocked. Critical and high-severity attacks are stopped at the firewall level in milliseconds.',
+      'Six detection rules run client-side: port scan, SSH brute force, RDP scan, SMB lateral, volume anomaly, DNS tunneling.',
   },
   {
     icon: Lock,
     title: 'Attack Classification',
     description:
-      'Every attempt is categorized: brute force, credential stuffing, DDoS, XSS probes, exploit attempts, directory traversal, and more.',
+      'Every attempt is categorized and ranked by severity. Critical threats are highlighted immediately.',
   },
 ];
 
 const STATS = [
-  { value: '4,750+', label: 'Threats blocked daily' },
-  { value: '8', label: 'Attack types detected' },
-  { value: '<50ms', label: 'Detection latency' },
-  { value: '99.9%', label: 'Uptime' },
+  { value: '6', label: 'Detection rules' },
+  { value: '20+', label: 'Protocols classified' },
+  { value: '<1s', label: 'Detection latency' },
+  { value: '176', label: 'Hosts per scan' },
 ];
 
-const TESTIMONIALS = [
+const STEPS = [
   {
-    quote: 'TrafficLens caught a coordinated brute force campaign from 3 different countries within seconds. Our old IDS took hours.',
-    author: 'Security Engineer',
-    company: 'Series B Startup',
+    num: '01',
+    title: 'Capture',
+    desc: 'Run a single CLI command. TrafficLens captures packets on your network interface and discovers every host via ARP scanning.',
+    icon: Terminal,
   },
   {
-    quote: 'The live feed is addictive. Being able to watch attacks get blocked in real time gives us confidence our infrastructure is protected.',
-    author: 'DevOps Lead',
-    company: 'E-commerce Platform',
+    num: '02',
+    title: 'Analyze',
+    desc: 'Traffic is classified by protocol. Six heuristic rules detect port scans, brute force, lateral movement, and anomalies.',
+    icon: Eye,
+  },
+  {
+    num: '03',
+    title: 'Visualize',
+    desc: 'Upload to the cloud and open the dashboard. See every threat, every host, every connection -- ranked and color-coded.',
+    icon: BarChart3,
   },
 ];
 
@@ -75,77 +84,94 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="max-w-[1440px] mx-auto px-6 pt-20 pb-24 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-8">
-          <Activity className="w-4 h-4" />
-          Real-time intrusion detection for modern infrastructure
-        </div>
+      <section className="relative overflow-hidden">
+        {/* Background layers */}
+        <div className="absolute inset-0 hero-grid opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-primary" />
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-tight max-w-4xl mx-auto">
-          Know who's trying to
-          <span className="text-accent"> break in</span> -- and stop them
-        </h1>
+        <div className="relative max-w-[1440px] mx-auto px-6 pt-16 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — Copy */}
+            <div className="max-w-xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-bg-card/60 text-accent text-xs font-medium mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-dot" />
+                Real-time intrusion detection
+              </div>
 
-        <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-          TrafficLens monitors every connection attempt to your system in real time.
-          Detect brute force attacks, port scans, exploit probes, and DDoS attempts
-          before they cause damage.
-        </p>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-text-primary leading-[1.1] tracking-tight">
+                See Every Threat.{' '}
+                <span className="text-gradient-accent">Stop It Instantly.</span>
+              </h1>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            to="/dashboard"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl transition-colors no-underline text-base"
-          >
-            Open Dashboard
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-          <a
-            href="#features"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-bg-card border border-border hover:border-text-secondary text-text-primary font-semibold rounded-xl transition-colors no-underline text-base"
-          >
-            See how it works
-          </a>
+              <p className="mt-5 text-base sm:text-lg text-text-secondary leading-relaxed max-w-md">
+                TrafficLens monitors every connection on your network. Capture packets,
+                detect intrusion patterns, and visualize threats in a single dashboard.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row items-start gap-3">
+                <Link
+                  to="/dashboard"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-text-inverse font-semibold rounded-lg transition-all duration-150 no-underline text-sm btn-press"
+                >
+                  Start Monitoring
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="#how-it-works"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-text-secondary text-text-primary font-medium rounded-lg transition-all duration-150 no-underline text-sm btn-press"
+                >
+                  View Live Demo
+                </a>
+              </div>
+            </div>
+
+            {/* Right — Live feed mockup */}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-accent/5 rounded-2xl blur-2xl" />
+              <div className="relative">
+                <HeroFeed />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="border-y border-border bg-bg-card">
-        <div className="max-w-[1440px] mx-auto px-6 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Stats */}
+      <section className="border-y border-border bg-bg-card/50">
+        <div className="max-w-[1440px] mx-auto px-6 py-10 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {STATS.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-accent">{stat.value}</div>
-              <div className="mt-1 text-sm text-text-secondary">{stat.label}</div>
+              <div className="text-3xl font-bold text-accent tracking-tight">{stat.value}</div>
+              <div className="mt-1 text-xs text-text-secondary uppercase tracking-wider font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Features */}
-      <section id="features" className="max-w-[1440px] mx-auto px-6 py-24">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-            Everything you need to defend your system
+      <section id="features" className="max-w-[1440px] mx-auto px-6 py-20">
+        <div className="max-w-2xl mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-primary tracking-tight">
+            Everything you need to defend your network
           </h2>
-          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
-            A single dashboard that shows you every hostile connection attempt,
-            categorized, ranked, and blocked automatically.
+          <p className="mt-3 text-text-secondary leading-relaxed">
+            From packet capture to threat visualization, one tool covers the entire pipeline.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
           {FEATURES.map((feature) => (
             <div
               key={feature.title}
-              className="bg-bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-colors"
+              className="bg-bg-card border border-border rounded-xl p-5 card-interactive"
             >
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                <feature.icon className="w-5 h-5 text-accent" />
+              <div className="w-9 h-9 rounded-lg bg-accent-muted flex items-center justify-center mb-3">
+                <feature.icon className="w-4.5 h-4.5 text-accent" />
               </div>
-              <h3 className="text-lg font-semibold text-text-primary mb-2">
+              <h3 className="text-sm font-semibold text-text-primary mb-1.5">
                 {feature.title}
               </h3>
-              <p className="text-sm text-text-secondary leading-relaxed">
+              <p className="text-xs text-text-secondary leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -154,100 +180,103 @@ export default function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="border-y border-border bg-bg-card">
-        <div className="max-w-[1440px] mx-auto px-6 py-24">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-              How TrafficLens works
+      <section id="how-it-works" className="border-y border-border bg-bg-card/30">
+        <div className="max-w-[1440px] mx-auto px-6 py-20">
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary tracking-tight">
+              Three steps to full visibility
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                step: '01',
-                title: 'Monitor',
-                desc: 'TrafficLens listens on your network interface and captures every incoming connection attempt to your system.',
-              },
-              {
-                step: '02',
-                title: 'Classify',
-                desc: 'Each attempt is analyzed and classified by attack type, threat severity, and geographic origin in real time.',
-              },
-              {
-                step: '03',
-                title: 'Defend',
-                desc: 'Critical threats are blocked instantly. You get a live dashboard showing who is attacking, how, and from where.',
-              },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="text-5xl font-bold text-accent/20 mb-4">{item.step}</div>
-                <h3 className="text-xl font-semibold text-text-primary mb-2">{item.title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed">{item.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {STEPS.map((step) => (
+              <div key={step.num} className="relative">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-accent-muted flex items-center justify-center">
+                    <step.icon className="w-4 h-4 text-accent" />
+                  </div>
+                  <span className="text-xs font-mono text-text-tertiary uppercase tracking-widest">Step {step.num}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-text-primary mb-2">{step.title}</h3>
+                <p className="text-sm text-text-secondary leading-relaxed">{step.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* CLI preview */}
+          <div className="mt-12 max-w-2xl">
+            <div className="rounded-xl border border-border bg-bg-primary overflow-hidden">
+              <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-border">
+                <span className="w-2.5 h-2.5 rounded-full bg-critical/60" />
+                <span className="w-2.5 h-2.5 rounded-full bg-medium/60" />
+                <span className="w-2.5 h-2.5 rounded-full bg-low/60" />
+                <span className="text-[11px] font-mono text-text-tertiary ml-2">terminal</span>
+              </div>
+              <div className="p-4 font-mono text-xs leading-relaxed">
+                <div className="text-text-secondary">$ <span className="text-accent">sudo -E python3 -m trafficlens</span> -i wlp0s20f3 -d 30 --upload</div>
+                <div className="text-text-tertiary mt-2">Phase 1: Scanning network...</div>
+                <div className="text-text-tertiary">Phase 2: Capturing packets... <span className="text-accent">1,956 captured</span></div>
+                <div className="text-text-tertiary">Phase 3: Analyzing traffic... <span className="text-low">176 hosts found</span></div>
+                <div className="text-text-tertiary">Phase 4: Uploading to backend... <span className="text-low">done</span></div>
+                <div className="text-text-secondary mt-2">$ <span className="animate-pulse-dot">_</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="max-w-[1440px] mx-auto px-6 py-24">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary">
-            Trusted by security teams
+      {/* Dashboard preview */}
+      <section className="max-w-[1440px] mx-auto px-6 py-20">
+        <div className="max-w-2xl mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-primary tracking-tight">
+            Built for security teams
           </h2>
+          <p className="mt-3 text-text-secondary leading-relaxed">
+            A dashboard that shows you every hostile connection, categorized, ranked, and analyzed automatically.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {TESTIMONIALS.map((t, i) => (
-            <div
-              key={i}
-              className="bg-bg-card border border-border rounded-xl p-6"
-            >
-              <p className="text-text-primary leading-relaxed italic">"{t.quote}"</p>
-              <div className="mt-4 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-accent" />
-                </div>
-                <div>
-                  <div className="text-sm font-medium text-text-primary">{t.author}</div>
-                  <div className="text-xs text-text-secondary">{t.company}</div>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Dashboard mockup image */}
+        <div className="rounded-xl border border-border overflow-hidden bg-bg-card shadow-[var(--shadow-elevated)]">
+          <img
+            src="/hero-bg.png"
+            alt="TrafficLens network visualization showing connected nodes and threat detection"
+            className="w-full h-auto object-cover opacity-80"
+            loading="lazy"
+          />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-bg-card">
-        <div className="max-w-[1440px] mx-auto px-6 py-20 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
-            See your threats in real time
-          </h2>
-          <p className="text-lg text-text-secondary mb-8 max-w-xl mx-auto">
-            Open the dashboard and start monitoring. No setup, no configuration --
-            just instant visibility into who's attacking your system.
-          </p>
-          <Link
-            to="/dashboard"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl transition-colors no-underline text-base"
-          >
-            Open Dashboard
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+      <section className="border-t border-border">
+        <div className="max-w-[1440px] mx-auto px-6 py-16">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary tracking-tight mb-3">
+              See your threats in real time
+            </h2>
+            <p className="text-text-secondary mb-6">
+              Open the dashboard and start monitoring. One command to scan, instant visibility into your network.
+            </p>
+            <Link
+              to="/dashboard"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-text-inverse font-semibold rounded-lg transition-all duration-150 no-underline text-sm btn-press"
+            >
+              Open Dashboard
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-border">
-        <div className="max-w-[1440px] mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1440px] mx-auto px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Shield className="w-5 h-5 text-accent" />
-            <span className="text-sm font-semibold text-text-primary">TrafficLens</span>
+            <Shield className="w-4 h-4 text-accent" />
+            <span className="text-xs font-semibold text-text-primary">TrafficLens</span>
           </div>
-          <p className="text-xs text-text-secondary">
-            Intrusion Detection Dashboard &mdash; v0.1
+          <p className="text-xs text-text-tertiary">
+            Intrusion Detection &mdash; v0.1
           </p>
         </div>
       </footer>

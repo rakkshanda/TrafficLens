@@ -8,11 +8,18 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('trafficlens-theme');
     if (saved) return saved === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return true; // dark-first
   });
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
+    }
     localStorage.setItem('trafficlens-theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 

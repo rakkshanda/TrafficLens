@@ -1,3 +1,4 @@
+import { Shield } from 'lucide-react';
 import Controls from '../components/Controls';
 import HostTable from '../components/HostTable';
 import TrafficFeed from '../components/TrafficFeed';
@@ -8,7 +9,7 @@ import useSupabaseData from '../hooks/useSupabaseData';
 
 function DashboardPanels({ isMonitoring, selectedInterface, setSelectedInterface, duration, setDuration, interfaces, hosts, threatEvents, topAttackers, startMonitor, stopMonitor }) {
   return (
-    <>
+    <div className="animate-fade-in flex flex-col gap-5">
       <Controls
         isMonitoring={isMonitoring}
         selectedInterface={selectedInterface}
@@ -20,7 +21,7 @@ function DashboardPanels({ isMonitoring, selectedInterface, setSelectedInterface
         onDurationChange={setDuration}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
         <div className="lg:col-span-3">
           <HostTable hosts={hosts} />
         </div>
@@ -31,7 +32,7 @@ function DashboardPanels({ isMonitoring, selectedInterface, setSelectedInterface
 
       <TopTalkers talkers={topAttackers} />
       <ConnectionGraph />
-    </>
+    </div>
   );
 }
 
@@ -40,17 +41,28 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <main className="max-w-[1440px] mx-auto p-6 flex flex-col gap-6">
+      <main className="max-w-[1440px] mx-auto p-6 flex flex-col gap-5">
         {/* Status bar */}
-        <div className="flex items-center bg-bg-card rounded-xl border border-border p-1.5 px-4">
-          <span className="text-sm font-medium text-text-primary">Live Data</span>
-          <span className="ml-auto text-xs text-text-secondary pr-1">
-            {liveData.isConnected
-              ? liveData.selectedScanId
-                ? `Viewing scan on ${liveData.selectedInterface || 'unknown'}`
-                : 'Select a scan below'
-              : 'Connect to Supabase backend'}
-          </span>
+        <div className="flex items-center bg-bg-card rounded-xl border border-border p-3 px-4 shadow-[var(--shadow-card)]">
+          <div className="flex items-center gap-2.5">
+            <Shield className="w-4 h-4 text-accent" />
+            <span className="text-sm font-semibold text-text-primary">Dashboard</span>
+          </div>
+          <div className="ml-auto flex items-center gap-2">
+            {liveData.isConnected && (
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-low animate-pulse-dot" />
+                <span className="text-[10px] font-mono text-low">CONNECTED</span>
+              </span>
+            )}
+            <span className="text-xs text-text-tertiary">
+              {liveData.isConnected
+                ? liveData.selectedScanId
+                  ? `Viewing scan on ${liveData.selectedInterface || 'unknown'}`
+                  : 'Select a scan'
+                : 'Connect to backend'}
+            </span>
+          </div>
         </div>
 
         <ScanSelector
@@ -70,7 +82,7 @@ export default function DashboardPage() {
         )}
       </main>
 
-      <footer className="text-center py-4 text-xs text-text-secondary border-t border-border">
+      <footer className="text-center py-4 text-[10px] text-text-tertiary border-t border-border mt-6">
         TrafficLens v0.1 &mdash; Intrusion Detection
       </footer>
     </div>

@@ -1,0 +1,3930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrafficLens Report — wlp0s20f3 — 2026-03-28 15:54:20</title>
+<style>
+  :root { --bg: #0f1117; --card: #1a1d27; --border: #2e3348; --text: #e2e8f0; --dim: #8892a8; --accent: #3b82f6; --green: #22c55e; --yellow: #eab308; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; padding: 2rem; line-height: 1.5; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.1rem; color: var(--dim); margin: 2rem 0 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .meta { color: var(--dim); font-size: 0.85rem; margin-bottom: 2rem; }
+  .meta span { margin-right: 1.5rem; }
+  .meta strong { color: var(--text); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; font-size: 0.85rem; }
+  th { background: var(--border); text-align: left; padding: 0.6rem 0.75rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dim); }
+  td { padding: 0.5rem 0.75rem; border-top: 1px solid var(--border); }
+  tr:hover td { background: rgba(59,130,246,0.04); }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .ip { color: var(--accent); }
+  .bytes-sent { color: var(--green); }
+  .bytes-recv { color: var(--yellow); }
+  .right { text-align: right; }
+  .bar-cell { position: relative; }
+  .bar-fill { position: absolute; top: 0; left: 0; bottom: 0; background: rgba(59,130,246,0.12); border-radius: 2px; }
+  .rank { color: var(--dim); }
+  .gw { font-size: 0.65rem; background: var(--accent); color: #fff; padding: 0.1rem 0.3rem; border-radius: 3px; margin-left: 0.4rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--dim); text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>TrafficLens Scan Report</h1>
+<div class="meta">
+  <span><strong>Date:</strong> 2026-03-28 15:54:20</span>
+  <span><strong>Interface:</strong> wlp0s20f3</span>
+  <span><strong>Subnet:</strong> 172.16.94.211/23</span>
+  <span><strong>Duration:</strong> 34s</span>
+  <span><strong>Packets:</strong> 6,658</span>
+  <span><strong>Bytes:</strong> 6.8 MB</span>
+  <span><strong>Hosts:</strong> 201</span>
+</div>
+
+<h2>Host Inventory</h2>
+
+<table>
+  <thead><tr>
+    <th>IP</th><th>MAC</th><th>Hostname</th><th>Manufacturer</th><th>First Seen</th><th>Last Seen</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr>
+    <td class="mono ip">104.192.140.16</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:39</td>
+    <td class="mono">15:54:39</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">104.20.27.145</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">13.227.180.4</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:49</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">13.89.178.26</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:47</td>
+    <td class="mono">15:54:47</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">139.196.135.144</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:38</td>
+    <td class="mono">15:54:38</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.250.69.163</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:35</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.250.73.142</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:46</td>
+    <td class="mono">15:54:46</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.251.33.202</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:46</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.251.45.142</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:35</td>
+    <td class="mono">15:54:35</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">143.204.165.132</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:49</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">162.159.130.234</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:34</td>
+    <td class="mono">15:54:47</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">162.159.134.233</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:34</td>
+    <td class="mono">15:54:34</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">169.254.169.254</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:41</td>
+    <td class="mono">15:54:43</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.101</td>
+    <td class="mono">ce:2e:42:cd:a5:57</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.104</td>
+    <td class="mono">b6:53:09:60:1b:23</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.116</td>
+    <td class="mono">1c:af:4a:2b:ba:7c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.118</td>
+    <td class="mono">f8:25:51:b1:af:56</td>
+    <td>-</td>
+    <td>SeikoEps</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:52</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.119</td>
+    <td class="mono">0a:33:21:f2:d7:6f</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.121</td>
+    <td class="mono">da:8e:ed:97:71:f2</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.137</td>
+    <td class="mono">2a:ea:72:de:23:40</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.147</td>
+    <td class="mono">ae:f3:f1:53:33:e6</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.153</td>
+    <td class="mono">b0:be:83:18:39:06</td>
+    <td>-</td>
+    <td>Apple</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.154</td>
+    <td class="mono">fc:3f:db:6b:0f:75</td>
+    <td>-</td>
+    <td>HewlettP</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.178</td>
+    <td class="mono">d4:ab:cd:e0:ae:1f</td>
+    <td>-</td>
+    <td>HuiZhouG</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.201</td>
+    <td class="mono">d2:ef:34:c9:89:9c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:40</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.207</td>
+    <td class="mono">d2:4e:42:27:c2:08</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.222</td>
+    <td class="mono">72:c2:99:b3:22:85</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.225</td>
+    <td class="mono">3c:0f:02:14:a6:d4</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.226</td>
+    <td class="mono">dc:b4:d9:f6:0f:cc</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:39</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.227</td>
+    <td class="mono">ea:7a:72:a1:f9:36</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.228</td>
+    <td class="mono">3c:0f:02:12:d8:c4</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:37</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.229</td>
+    <td class="mono">00:1d:00:01:68:ea</td>
+    <td>-</td>
+    <td>Brivo</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.23</td>
+    <td class="mono">14:59:c0:ae:aa:95</td>
+    <td>-</td>
+    <td>Netgear</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.231</td>
+    <td class="mono">c2:8a:11:60:12:2b</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:40</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.232</td>
+    <td class="mono">48:62:64:18:bd:cc</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.233</td>
+    <td class="mono">88:f4:da:59:44:53</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.236</td>
+    <td class="mono">2e:7e:5b:1a:a2:b1</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:37</td>
+    <td class="mono">15:54:45</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.237</td>
+    <td class="mono">74:0e:a4:98:f4:f1</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.240</td>
+    <td class="mono">4e:ed:84:e5:80:e7</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.241</td>
+    <td class="mono">d6:f2:0b:c7:74:a7</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:44</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.242</td>
+    <td class="mono">48:62:64:18:32:1a</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.243</td>
+    <td class="mono">6c:b1:33:a2:eb:2c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.245</td>
+    <td class="mono">24:eb:16:ae:70:2c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.246</td>
+    <td class="mono">d2:e1:6d:ff:7c:3d</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:55</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.247</td>
+    <td class="mono">d6:47:fe:44:41:32</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.248</td>
+    <td class="mono">3e:da:ef:8d:a6:7f</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.249</td>
+    <td class="mono">8a:d0:bb:eb:73:64</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.25</td>
+    <td class="mono">94:ff:3c:f9:14:80</td>
+    <td>-</td>
+    <td>Fortinet</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.250</td>
+    <td class="mono">c4:75:ab:36:59:2f</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.251</td>
+    <td class="mono">d2:fa:6f:66:66:5e</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.253</td>
+    <td class="mono">86:7e:d1:6d:86:79</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.254</td>
+    <td class="mono">9e:70:9b:55:3f:f0</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.255</td>
+    <td class="mono">0a:fd:cb:1b:f4:7a</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.30</td>
+    <td class="mono">90:ac:3f:0f:ae:47</td>
+    <td>-</td>
+    <td>BrightSi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.55</td>
+    <td class="mono">68:7a:64:7c:ff:4c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.63</td>
+    <td class="mono">10:ff:e0:84:e8:f6</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.71</td>
+    <td class="mono">50:06:f5:34:86:2b</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.73</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.79</td>
+    <td class="mono">9c:67:d6:03:52:4b</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.90</td>
+    <td class="mono">ce:14:83:05:eb:be</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.96</td>
+    <td class="mono">94:dd:f8:6c:7d:a1</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.97</td>
+    <td class="mono">c4:63:fb:01:5f:ee</td>
+    <td>-</td>
+    <td>Neatfram</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.0</td>
+    <td class="mono">12:34:f6:47:2e:57</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:47</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.1</td>
+    <td class="mono">1e:94:39:e5:b9:79</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.10</td>
+    <td class="mono">9c:b6:d0:e6:cf:87</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:38</td>
+    <td class="mono">15:54:44</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.100</td>
+    <td class="mono">c6:39:41:e3:cc:1e</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:31</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.102</td>
+    <td class="mono">04:d4:c4:df:de:45</td>
+    <td>-</td>
+    <td>ASUSTekC</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.104</td>
+    <td class="mono">e6:65:69:30:de:2e</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:48</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.107</td>
+    <td class="mono">62:3e:96:d3:d3:d5</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.109</td>
+    <td class="mono">e2:44:1c:f8:46:18</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.11</td>
+    <td class="mono">1c:57:dc:7c:95:3d</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.110</td>
+    <td class="mono">a4:cf:99:83:90:cb</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.113</td>
+    <td class="mono">dc:41:a9:e5:d8:64</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.117</td>
+    <td class="mono">06:02:e5:26:e7:8e</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.12</td>
+    <td class="mono">4e:44:c3:38:c1:7b</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.120</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:53</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.121</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:40</td>
+    <td class="mono">15:54:43</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.123</td>
+    <td class="mono">f2:6d:87:42:9e:63</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:30</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.124</td>
+    <td class="mono">16:de:94:89:87:0f</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:51</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.125</td>
+    <td class="mono">12:70:fc:54:0d:04</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.127</td>
+    <td class="mono">52:43:9b:dc:27:95</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.128</td>
+    <td class="mono">72:79:a9:49:11:9d</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:45</td>
+    <td class="mono">15:54:46</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.13</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.131</td>
+    <td class="mono">66:de:64:bd:0c:ed</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.132</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:30</td>
+    <td class="mono">15:54:30</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.133</td>
+    <td class="mono">b2:66:da:2b:b4:2b</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:48</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.137</td>
+    <td class="mono">7c:49:cf:fb:94:c1</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.139</td>
+    <td class="mono">5e:8c:5e:06:72:f4</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:33</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.14</td>
+    <td class="mono">d6:79:2d:3e:cd:b8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:30</td>
+    <td class="mono">15:54:39</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.140</td>
+    <td class="mono">06:80:86:52:5f:a9</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.143</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.147</td>
+    <td class="mono">9a:c3:5e:d3:34:83</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.149</td>
+    <td class="mono">7e:19:62:d8:e6:16</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:44</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.150</td>
+    <td class="mono">aa:b5:cd:0c:16:7a</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.155</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.156</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.157</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.158</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:32</td>
+    <td class="mono">15:54:39</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.16</td>
+    <td class="mono">06:73:d5:45:fc:2f</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.18</td>
+    <td class="mono">6a:41:9c:28:41:ba</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.19</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.2</td>
+    <td class="mono">1a:7b:1e:b6:e2:93</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.21</td>
+    <td class="mono">30:68:93:ad:56:36</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.22</td>
+    <td class="mono">d2:a0:9b:33:e9:58</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:37</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.23</td>
+    <td class="mono">8a:eb:56:52:f2:70</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.240</td>
+    <td class="mono">34:fa:9f:27:f8:60</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.241</td>
+    <td class="mono">34:fa:9f:26:de:e0</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.242</td>
+    <td class="mono">34:fa:9f:26:ee:c0</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.243</td>
+    <td class="mono">34:fa:9f:26:ef:50</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.244</td>
+    <td class="mono">34:fa:9f:26:f3:50</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.245</td>
+    <td class="mono">34:fa:9f:26:db:a0</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.246</td>
+    <td class="mono">34:fa:9f:27:f6:31</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.247</td>
+    <td class="mono">34:fa:9f:26:f0:60</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.248</td>
+    <td class="mono">34:fa:9f:26:ef:30</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.249</td>
+    <td class="mono">34:fa:9f:28:19:50</td>
+    <td>-</td>
+    <td>RuckusWi</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.25</td>
+    <td class="mono">4c:3b:df:55:ac:45</td>
+    <td>-</td>
+    <td>Microsof</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.250</td>
+    <td class="mono">80:bc:37:22:85:b2</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.251</td>
+    <td class="mono">9c:dc:71:37:b2:20</td>
+    <td>-</td>
+    <td>HewlettP</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.253</td>
+    <td class="mono">9c:dc:71:37:e1:20</td>
+    <td>-</td>
+    <td>HewlettP</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.254<span class="gw">GW</span></td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>_gateway</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.27</td>
+    <td class="mono">16:fd:3c:75:92:3d</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.28</td>
+    <td class="mono">9e:83:e1:24:8a:0f</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.31</td>
+    <td class="mono">5c:fb:3a:cc:49:09</td>
+    <td>-</td>
+    <td>Chongqin</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.32</td>
+    <td class="mono">8a:9d:27:0a:49:23</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.36</td>
+    <td class="mono">a4:83:e7:37:86:60</td>
+    <td>-</td>
+    <td>Apple</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:51</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.37</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.38</td>
+    <td class="mono">d8:5e:d3:86:b9:ff</td>
+    <td>-</td>
+    <td>Giga-Byt</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.39</td>
+    <td class="mono">c4:75:ab:37:26:bb</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.4</td>
+    <td class="mono">d4:d8:53:58:39:37</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.42</td>
+    <td class="mono">66:c8:55:d2:e5:d0</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.49</td>
+    <td class="mono">9a:ce:d1:39:e3:8f</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.50</td>
+    <td class="mono">8a:93:20:cd:1f:9c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.54</td>
+    <td class="mono">c8:34:8e:4e:4e:f3</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.55</td>
+    <td class="mono">5a:f7:37:50:df:93</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:39</td>
+    <td class="mono">15:54:41</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.56</td>
+    <td class="mono">0e:64:f2:01:f3:8e</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:52</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.57</td>
+    <td class="mono">44:db:d2:9e:65:68</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.58</td>
+    <td class="mono">96:fc:78:5c:53:e9</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:45</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.59</td>
+    <td class="mono">ae:30:83:f3:e8:a0</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:40</td>
+    <td class="mono">15:54:45</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.6</td>
+    <td class="mono">82:18:db:95:5a:7f</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.61</td>
+    <td class="mono">84:9e:56:5a:3c:5d</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:39</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.65</td>
+    <td class="mono">0a:05:bc:7c:a1:fa</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.66</td>
+    <td class="mono">c8:34:8e:15:2b:25</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.67</td>
+    <td class="mono">92:9d:30:d2:3f:37</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.68</td>
+    <td class="mono">42:8d:5a:64:5a:33</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:42</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.69</td>
+    <td class="mono">02:cb:7b:28:9e:9c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.7</td>
+    <td class="mono">a8:8f:d9:49:f6:15</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.70</td>
+    <td class="mono">ba:8b:89:c4:6c:f1</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:45</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.72</td>
+    <td class="mono">52:16:b8:0a:45:42</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:50</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.73</td>
+    <td class="mono">9a:d8:30:b8:e0:1c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:45</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.74</td>
+    <td class="mono">bc:d0:74:47:bf:7c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.76</td>
+    <td class="mono">7c:70:db:20:37:67</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.77</td>
+    <td class="mono">7c:b5:66:b3:3a:44</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.79</td>
+    <td class="mono">9e:27:9a:38:46:aa</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:40</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.8</td>
+    <td class="mono">9e:59:df:7b:c2:80</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:47</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.82</td>
+    <td class="mono">30:68:93:ad:55:e6</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.83</td>
+    <td class="mono">de:9c:84:31:8e:7c</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:30</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.84</td>
+    <td class="mono">60:a5:e2:5e:6b:72</td>
+    <td>-</td>
+    <td>IntelCor</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.85</td>
+    <td class="mono">1e:14:a3:4b:48:bb</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.86</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.87</td>
+    <td class="mono">c4:35:d9:b5:fe:6b</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:28</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.89</td>
+    <td class="mono">82:c5:e7:1a:ee:42</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.9</td>
+    <td class="mono">ee:40:4d:2a:23:1e</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.93</td>
+    <td class="mono">4a:01:2a:04:e8:ec</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:25</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.96</td>
+    <td class="mono">f2:eb:d5:95:ba:86</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.97</td>
+    <td class="mono">ee:ea:df:5c:df:a5</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.98</td>
+    <td class="mono">02:11:b6:cd:28:49</td>
+    <td>-</td>
+    <td>MS-NLB-PhysServer-17</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.99</td>
+    <td class="mono">8a:6a:b3:ad:53:ce</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:29</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.66.149.246</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:30</td>
+    <td class="mono">15:54:45</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">18.238.217.69</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:39</td>
+    <td class="mono">15:54:39</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">18.65.238.62</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:41</td>
+    <td class="mono">15:54:41</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">18.97.36.8</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:29</td>
+    <td class="mono">15:54:37</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">198.11.173.22</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:50</td>
+    <td class="mono">15:54:51</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">203.119.204.226</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:38</td>
+    <td class="mono">15:54:43</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">216.150.1.1</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:35</td>
+    <td class="mono">15:54:50</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">224.0.0.22</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">224.0.0.252</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:53</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">239.255.255.250</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:55</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.13.168.218</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:32</td>
+    <td class="mono">15:54:32</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.165.160.77</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:31</td>
+    <td class="mono">15:54:49</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.233.158.26</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:46</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:30</td>
+    <td class="mono">15:54:52</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">44.232.164.14</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:28</td>
+    <td class="mono">15:54:28</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.251.37.199</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:38</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.251.64.28</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:41</td>
+    <td class="mono">15:54:42</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.253.102.82</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:38</td>
+    <td class="mono">15:54:48</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.253.230.85</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:38</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.253.46.181</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:25</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.254.24.2</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:41</td>
+    <td class="mono">15:54:42</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.77.198.139</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:41</td>
+    <td class="mono">15:54:42</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.77.224.76</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:29</td>
+    <td class="mono">15:54:42</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.88.94.93</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:26</td>
+    <td class="mono">15:54:43</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:53</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.153</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.155</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.156</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:29</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.157</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:31</td>
+    <td class="mono">15:54:47</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.158</td>
+    <td class="mono">bc:6e:e2:35:53:81</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:27</td>
+    <td class="mono">15:54:54</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">8.222.184.151</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:35</td>
+    <td class="mono">15:54:53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">8.8.8.8</td>
+    <td class="mono">18:fd:74:0b:e9:f8</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="mono">15:54:35</td>
+    <td class="mono">15:54:50</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<h2>Per-Host Traffic</h2>
+
+<table>
+  <thead><tr>
+    <th>IP</th><th class="right">Sent</th><th class="right">Received</th><th class="right">Connections</th><th>Top Protocol</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr>
+    <td class="mono ip">104.192.140.16</td>
+    <td class="right mono bytes-sent">105 B</td>
+    <td class="right mono bytes-recv">171 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">104.20.27.145</td>
+    <td class="right mono bytes-sent">105 B</td>
+    <td class="right mono bytes-recv">171 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">13.227.180.4</td>
+    <td class="right mono bytes-sent">132 B</td>
+    <td class="right mono bytes-recv">327 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">13.89.178.26</td>
+    <td class="right mono bytes-sent">66 B</td>
+    <td class="right mono bytes-recv">66 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">139.196.135.144</td>
+    <td class="right mono bytes-sent">497 B</td>
+    <td class="right mono bytes-recv">1.4 KB</td>
+    <td class="right mono">1</td>
+    <td>TCP/8848</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.250.69.163</td>
+    <td class="right mono bytes-sent">7.6 KB</td>
+    <td class="right mono bytes-recv">8.8 KB</td>
+    <td class="right mono">1</td>
+    <td>UDP/443</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.250.73.142</td>
+    <td class="right mono bytes-sent">105 B</td>
+    <td class="right mono bytes-recv">171 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.251.33.202</td>
+    <td class="right mono bytes-sent">375 B</td>
+    <td class="right mono bytes-recv">222 B</td>
+    <td class="right mono">1</td>
+    <td>UDP/57190</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.251.45.142</td>
+    <td class="right mono bytes-sent">1.1 KB</td>
+    <td class="right mono bytes-recv">7.2 KB</td>
+    <td class="right mono">1</td>
+    <td>UDP/443</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">143.204.165.132</td>
+    <td class="right mono bytes-sent">342 B</td>
+    <td class="right mono bytes-recv">522 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">162.159.130.234</td>
+    <td class="right mono bytes-sent">730 B</td>
+    <td class="right mono bytes-recv">385 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">162.159.134.233</td>
+    <td class="right mono bytes-sent">66 B</td>
+    <td class="right mono bytes-recv">66 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">169.254.169.254</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">126 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.101</td>
+    <td class="right mono bytes-sent">151 B</td>
+    <td class="right mono bytes-recv">84 B</td>
+    <td class="right mono">2</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.116</td>
+    <td class="right mono bytes-sent">4.7 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.118</td>
+    <td class="right mono bytes-sent">988 B</td>
+    <td class="right mono bytes-recv">210 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.121</td>
+    <td class="right mono bytes-sent">2.3 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.137</td>
+    <td class="right mono bytes-sent">2.7 KB</td>
+    <td class="right mono bytes-recv">336 B</td>
+    <td class="right mono">4</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.147</td>
+    <td class="right mono bytes-sent">4.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.153</td>
+    <td class="right mono bytes-sent">3.3 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.154</td>
+    <td class="right mono bytes-sent">3.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.178</td>
+    <td class="right mono bytes-sent">4.7 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.201</td>
+    <td class="right mono bytes-sent">1.9 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="right mono bytes-sent">5.4 MB</td>
+    <td class="right mono bytes-recv">469.7 KB</td>
+    <td class="right mono">36</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.225</td>
+    <td class="right mono bytes-sent">364 B</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">2</td>
+    <td>IP/2</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.226</td>
+    <td class="right mono bytes-sent">180 B</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">2</td>
+    <td>IP/2</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.227</td>
+    <td class="right mono bytes-sent">3.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.228</td>
+    <td class="right mono bytes-sent">42 B</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.231</td>
+    <td class="right mono bytes-sent">1002 B</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>SSDP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.236</td>
+    <td class="right mono bytes-sent">7.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.237</td>
+    <td class="right mono bytes-sent">8.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">8</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.241</td>
+    <td class="right mono bytes-sent">11.7 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.243</td>
+    <td class="right mono bytes-sent">2.9 KB</td>
+    <td class="right mono bytes-recv">252 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.246</td>
+    <td class="right mono bytes-sent">244 B</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.247</td>
+    <td class="right mono bytes-sent">4.6 KB</td>
+    <td class="right mono bytes-recv">106 B</td>
+    <td class="right mono">12</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.248</td>
+    <td class="right mono bytes-sent">2.2 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.250</td>
+    <td class="right mono bytes-sent">240 B</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.251</td>
+    <td class="right mono bytes-sent">2.0 KB</td>
+    <td class="right mono bytes-recv">84 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.253</td>
+    <td class="right mono bytes-sent">3.6 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.255</td>
+    <td class="right mono bytes-sent">4.5 KB</td>
+    <td class="right mono bytes-recv">168 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.71</td>
+    <td class="right mono bytes-sent">4.1 KB</td>
+    <td class="right mono bytes-recv">210 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.73</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">84 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.96</td>
+    <td class="right mono bytes-sent">11.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.0</td>
+    <td class="right mono bytes-sent">6.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.1</td>
+    <td class="right mono bytes-sent">6.3 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.10</td>
+    <td class="right mono bytes-sent">552 B</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>SSDP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.100</td>
+    <td class="right mono bytes-sent">5.5 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.104</td>
+    <td class="right mono bytes-sent">3.1 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.109</td>
+    <td class="right mono bytes-sent">3.3 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.11</td>
+    <td class="right mono bytes-sent">4.8 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.110</td>
+    <td class="right mono bytes-sent">4.8 KB</td>
+    <td class="right mono bytes-recv">210 B</td>
+    <td class="right mono">4</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.117</td>
+    <td class="right mono bytes-sent">2.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.12</td>
+    <td class="right mono bytes-sent">3.1 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">4</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.120</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.121</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">210 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.123</td>
+    <td class="right mono bytes-sent">4.2 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.124</td>
+    <td class="right mono bytes-sent">4.6 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.125</td>
+    <td class="right mono bytes-sent">3.4 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.127</td>
+    <td class="right mono bytes-sent">3.3 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.128</td>
+    <td class="right mono bytes-sent">3.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.13</td>
+    <td class="right mono bytes-sent">3.0 KB</td>
+    <td class="right mono bytes-recv">210 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.131</td>
+    <td class="right mono bytes-sent">7.7 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">5</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.132</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.133</td>
+    <td class="right mono bytes-sent">5.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.139</td>
+    <td class="right mono bytes-sent">2.2 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.14</td>
+    <td class="right mono bytes-sent">1.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.140</td>
+    <td class="right mono bytes-sent">2.7 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.143</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">1.0 KB</td>
+    <td class="right mono">3</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.147</td>
+    <td class="right mono bytes-sent">3.5 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.149</td>
+    <td class="right mono bytes-sent">7.8 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.150</td>
+    <td class="right mono bytes-sent">4.8 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.155</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">840 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.156</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">660 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.157</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">780 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.158</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">360 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.16</td>
+    <td class="right mono bytes-sent">4.3 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">7</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.18</td>
+    <td class="right mono bytes-sent">3.1 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.19</td>
+    <td class="right mono bytes-sent">6.9 KB</td>
+    <td class="right mono bytes-recv">126 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.22</td>
+    <td class="right mono bytes-sent">3.8 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.251</td>
+    <td class="right mono bytes-sent">782 B</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>IP/2</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.254<span class="gw">GW</span></td>
+    <td class="right mono bytes-sent">4.7 KB</td>
+    <td class="right mono bytes-recv">1.3 KB</td>
+    <td class="right mono">6</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.32</td>
+    <td class="right mono bytes-sent">2.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.36</td>
+    <td class="right mono bytes-sent">4.1 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.37</td>
+    <td class="right mono bytes-sent">5.3 KB</td>
+    <td class="right mono bytes-recv">882 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.42</td>
+    <td class="right mono bytes-sent">7.5 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">4</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.49</td>
+    <td class="right mono bytes-sent">10.4 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">5</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.50</td>
+    <td class="right mono bytes-sent">18.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.54</td>
+    <td class="right mono bytes-sent">1.5 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.55</td>
+    <td class="right mono bytes-sent">3.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.56</td>
+    <td class="right mono bytes-sent">24.5 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.58</td>
+    <td class="right mono bytes-sent">3.8 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.59</td>
+    <td class="right mono bytes-sent">5.8 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.6</td>
+    <td class="right mono bytes-sent">5.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.61</td>
+    <td class="right mono bytes-sent">9.5 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>SSDP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.65</td>
+    <td class="right mono bytes-sent">4.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.67</td>
+    <td class="right mono bytes-sent">6.0 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.68</td>
+    <td class="right mono bytes-sent">4.9 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.7</td>
+    <td class="right mono bytes-sent">5.1 KB</td>
+    <td class="right mono bytes-recv">252 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.70</td>
+    <td class="right mono bytes-sent">4.9 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.72</td>
+    <td class="right mono bytes-sent">2.8 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.73</td>
+    <td class="right mono bytes-sent">8.0 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.74</td>
+    <td class="right mono bytes-sent">23.5 KB</td>
+    <td class="right mono bytes-recv">630 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.76</td>
+    <td class="right mono bytes-sent">950 B</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.79</td>
+    <td class="right mono bytes-sent">4.2 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.8</td>
+    <td class="right mono bytes-sent">4.5 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.83</td>
+    <td class="right mono bytes-sent">6.3 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.85</td>
+    <td class="right mono bytes-sent">5.5 KB</td>
+    <td class="right mono bytes-recv">210 B</td>
+    <td class="right mono">4</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.86</td>
+    <td class="right mono bytes-sent">2.5 KB</td>
+    <td class="right mono bytes-recv">84 B</td>
+    <td class="right mono">2</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.87</td>
+    <td class="right mono bytes-sent">197 B</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.89</td>
+    <td class="right mono bytes-sent">3.2 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.9</td>
+    <td class="right mono bytes-sent">6.8 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">3</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.96</td>
+    <td class="right mono bytes-sent">5.1 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.97</td>
+    <td class="right mono bytes-sent">3.3 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.98</td>
+    <td class="right mono bytes-sent">5.8 KB</td>
+    <td class="right mono bytes-recv">0 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.99</td>
+    <td class="right mono bytes-sent">2.6 KB</td>
+    <td class="right mono bytes-recv">42 B</td>
+    <td class="right mono">1</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.66.149.246</td>
+    <td class="right mono bytes-sent">1.3 KB</td>
+    <td class="right mono bytes-recv">628 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">18.238.217.69</td>
+    <td class="right mono bytes-sent">701 B</td>
+    <td class="right mono bytes-recv">410 B</td>
+    <td class="right mono">1</td>
+    <td>HTTP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">18.65.238.62</td>
+    <td class="right mono bytes-sent">3.2 KB</td>
+    <td class="right mono bytes-recv">3.3 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">18.97.36.8</td>
+    <td class="right mono bytes-sent">405 B</td>
+    <td class="right mono bytes-recv">533 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">198.11.173.22</td>
+    <td class="right mono bytes-sent">37.1 KB</td>
+    <td class="right mono bytes-recv">2.5 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">203.119.204.226</td>
+    <td class="right mono bytes-sent">5.7 KB</td>
+    <td class="right mono bytes-recv">1.3 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">216.150.1.1</td>
+    <td class="right mono bytes-sent">1.1 KB</td>
+    <td class="right mono bytes-recv">1.3 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">224.0.0.22</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">702 B</td>
+    <td class="right mono">8</td>
+    <td>IP/2</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">398.7 KB</td>
+    <td class="right mono">96</td>
+    <td>mDNS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">224.0.0.252</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">300 B</td>
+    <td class="right mono">1</td>
+    <td>LLMNR</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">239.255.255.250</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">22.9 KB</td>
+    <td class="right mono">22</td>
+    <td>SSDP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.13.168.218</td>
+    <td class="right mono bytes-sent">157 B</td>
+    <td class="right mono bytes-recv">95 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.165.160.77</td>
+    <td class="right mono bytes-sent">510 B</td>
+    <td class="right mono bytes-recv">515 B</td>
+    <td class="right mono">2</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.233.158.26</td>
+    <td class="right mono bytes-sent">3.1 KB</td>
+    <td class="right mono bytes-recv">50.1 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="right mono bytes-sent">131.8 KB</td>
+    <td class="right mono bytes-recv">3.8 MB</td>
+    <td class="right mono">12</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">44.232.164.14</td>
+    <td class="right mono bytes-sent">105 B</td>
+    <td class="right mono bytes-recv">171 B</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.251.37.199</td>
+    <td class="right mono bytes-sent">22.7 KB</td>
+    <td class="right mono bytes-recv">6.8 KB</td>
+    <td class="right mono">4</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.251.64.28</td>
+    <td class="right mono bytes-sent">16.8 KB</td>
+    <td class="right mono bytes-recv">3.7 KB</td>
+    <td class="right mono">3</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.253.102.82</td>
+    <td class="right mono bytes-sent">1.5 KB</td>
+    <td class="right mono bytes-recv">3.7 KB</td>
+    <td class="right mono">3</td>
+    <td>HTTP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.253.230.85</td>
+    <td class="right mono bytes-sent">48.1 KB</td>
+    <td class="right mono bytes-recv">10.9 KB</td>
+    <td class="right mono">7</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.253.46.181</td>
+    <td class="right mono bytes-sent">38.8 KB</td>
+    <td class="right mono bytes-recv">41.7 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.254.24.2</td>
+    <td class="right mono bytes-sent">16.6 KB</td>
+    <td class="right mono bytes-recv">3.7 KB</td>
+    <td class="right mono">3</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.77.198.139</td>
+    <td class="right mono bytes-sent">16.9 KB</td>
+    <td class="right mono bytes-recv">3.9 KB</td>
+    <td class="right mono">3</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.77.224.76</td>
+    <td class="right mono bytes-sent">24.0 KB</td>
+    <td class="right mono bytes-recv">74.7 KB</td>
+    <td class="right mono">4</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.88.94.93</td>
+    <td class="right mono bytes-sent">17.4 KB</td>
+    <td class="right mono bytes-recv">3.9 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="right mono bytes-sent">64.9 KB</td>
+    <td class="right mono bytes-recv">1.5 MB</td>
+    <td class="right mono">1</td>
+    <td>HTTPS</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.153</td>
+    <td class="right mono bytes-sent">2.4 KB</td>
+    <td class="right mono bytes-recv">360 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.155</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">540 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.156</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">780 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.157</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">300 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">65.141.156.158</td>
+    <td class="right mono bytes-sent">0 B</td>
+    <td class="right mono bytes-recv">480 B</td>
+    <td class="right mono">1</td>
+    <td>ARP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">8.222.184.151</td>
+    <td class="right mono bytes-sent">1.7 KB</td>
+    <td class="right mono bytes-recv">6.9 KB</td>
+    <td class="right mono">1</td>
+    <td>HTTP</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">8.8.8.8</td>
+    <td class="right mono bytes-sent">4.3 KB</td>
+    <td class="right mono bytes-recv">2.3 KB</td>
+    <td class="right mono">18</td>
+    <td>DNS</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<h2>Protocol Distribution</h2>
+
+<table>
+  <thead><tr>
+    <th>Protocol</th><th class="right">Bytes</th><th class="right">Share</th><th>Bar</th>
+  </tr></thead>
+  <tbody>
+  
+  
+  <tr>
+    <td><strong>HTTPS</strong></td>
+    <td class="right mono">5.9 MB</td>
+    <td class="right">86.7%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 86.7089821353726%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>OTHER</strong></td>
+    <td class="right mono">435.6 KB</td>
+    <td class="right">6.3%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 6.29845891745758%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>mDNS</strong></td>
+    <td class="right mono">397.8 KB</td>
+    <td class="right">5.8%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 5.753075443113482%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>SSDP</strong></td>
+    <td class="right mono">19.0 KB</td>
+    <td class="right">0.3%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.2752619026907091%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>UDP/443</strong></td>
+    <td class="right mono">16.2 KB</td>
+    <td class="right">0.2%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.23413925439215869%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>HTTP</strong></td>
+    <td class="right mono">14.9 KB</td>
+    <td class="right">0.2%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.21544200633333974%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>ARP</strong></td>
+    <td class="right mono">12.4 KB</td>
+    <td class="right">0.2%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.17960090695774872%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>UDP/42192</strong></td>
+    <td class="right mono">7.6 KB</td>
+    <td class="right">0.1%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.11047475193666208%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>DNS</strong></td>
+    <td class="right mono">6.5 KB</td>
+    <td class="right">0.1%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.09437591297363067%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>IP/2</strong></td>
+    <td class="right mono">5.0 KB</td>
+    <td class="right">0.1%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.07241653175651325%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>TCP/8848</strong></td>
+    <td class="right mono">1.4 KB</td>
+    <td class="right">0.0%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.02039186268650646%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>UDP/45830</strong></td>
+    <td class="right mono">1.1 KB</td>
+    <td class="right">0.0%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.015392749534828283%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>TCP/35702</strong></td>
+    <td class="right mono">497 B</td>
+    <td class="right">0.0%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.007018528916339136%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>UDP/15600</strong></td>
+    <td class="right mono">385 B</td>
+    <td class="right">0.0%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.005436888597164119%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>UDP/57190</strong></td>
+    <td class="right mono">375 B</td>
+    <td class="right">0.0%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.005295670711523493%"></div>&nbsp;</td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>LLMNR</strong></td>
+    <td class="right mono">300 B</td>
+    <td class="right">0.0%</td>
+    <td class="bar-cell"><div class="bar-fill" style="width: 0.0042365365692187944%"></div>&nbsp;</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<h2>Top Talkers (by Bytes)</h2>
+
+<table>
+  <thead><tr><th>#</th><th>IP</th><th class="right">Total</th></tr></thead>
+  <tbody>
+  
+  <tr>
+    <td class="rank">1</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="right mono">5.9 MB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">2</td>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="right mono">3.9 MB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">3</td>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="right mono">1.5 MB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">4</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="right mono">398.7 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">5</td>
+    <td class="mono ip">47.77.224.76</td>
+    <td class="right mono">98.7 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">6</td>
+    <td class="mono ip">47.253.46.181</td>
+    <td class="right mono">80.5 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">7</td>
+    <td class="mono ip">47.253.230.85</td>
+    <td class="right mono">59.0 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">8</td>
+    <td class="mono ip">3.233.158.26</td>
+    <td class="right mono">53.2 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">9</td>
+    <td class="mono ip">198.11.173.22</td>
+    <td class="right mono">39.6 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">10</td>
+    <td class="mono ip">47.251.37.199</td>
+    <td class="right mono">29.5 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">11</td>
+    <td class="mono ip">172.16.95.56</td>
+    <td class="right mono">24.6 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">12</td>
+    <td class="mono ip">172.16.95.74</td>
+    <td class="right mono">24.2 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">13</td>
+    <td class="mono ip">239.255.255.250</td>
+    <td class="right mono">22.9 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">14</td>
+    <td class="mono ip">47.88.94.93</td>
+    <td class="right mono">21.3 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">15</td>
+    <td class="mono ip">47.77.198.139</td>
+    <td class="right mono">20.7 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">16</td>
+    <td class="mono ip">47.251.64.28</td>
+    <td class="right mono">20.5 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">17</td>
+    <td class="mono ip">47.254.24.2</td>
+    <td class="right mono">20.3 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">18</td>
+    <td class="mono ip">172.16.95.50</td>
+    <td class="right mono">18.9 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">19</td>
+    <td class="mono ip">142.250.69.163</td>
+    <td class="right mono">16.4 KB</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">20</td>
+    <td class="mono ip">172.16.94.241</td>
+    <td class="right mono">11.7 KB</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<h2>Top Talkers (by Connections)</h2>
+
+<table>
+  <thead><tr><th>#</th><th>IP</th><th class="right">Connections</th></tr></thead>
+  <tbody>
+  
+  <tr>
+    <td class="rank">1</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="right mono">96</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">2</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="right mono">36</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">3</td>
+    <td class="mono ip">239.255.255.250</td>
+    <td class="right mono">22</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">4</td>
+    <td class="mono ip">8.8.8.8</td>
+    <td class="right mono">18</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">5</td>
+    <td class="mono ip">172.16.94.247</td>
+    <td class="right mono">12</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">6</td>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="right mono">12</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">7</td>
+    <td class="mono ip">172.16.94.237</td>
+    <td class="right mono">8</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">8</td>
+    <td class="mono ip">224.0.0.22</td>
+    <td class="right mono">8</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">9</td>
+    <td class="mono ip">172.16.95.16</td>
+    <td class="right mono">7</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">10</td>
+    <td class="mono ip">47.253.230.85</td>
+    <td class="right mono">7</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">11</td>
+    <td class="mono ip">172.16.95.254<span class="gw">GW</span></td>
+    <td class="right mono">6</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">12</td>
+    <td class="mono ip">172.16.95.131</td>
+    <td class="right mono">5</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">13</td>
+    <td class="mono ip">172.16.95.49</td>
+    <td class="right mono">5</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">14</td>
+    <td class="mono ip">172.16.94.137</td>
+    <td class="right mono">4</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">15</td>
+    <td class="mono ip">172.16.95.110</td>
+    <td class="right mono">4</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">16</td>
+    <td class="mono ip">172.16.95.12</td>
+    <td class="right mono">4</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">17</td>
+    <td class="mono ip">172.16.95.42</td>
+    <td class="right mono">4</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">18</td>
+    <td class="mono ip">172.16.95.85</td>
+    <td class="right mono">4</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">19</td>
+    <td class="mono ip">47.251.37.199</td>
+    <td class="right mono">4</td>
+  </tr>
+  
+  <tr>
+    <td class="rank">20</td>
+    <td class="mono ip">47.77.224.76</td>
+    <td class="right mono">4</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+
+<h2>Connection Pairs</h2>
+
+<table>
+  <thead><tr>
+    <th>Source</th><th>Destination</th><th>Port</th><th>Protocol</th><th class="right">Bytes</th><th class="right">Packets</th>
+  </tr></thead>
+  <tbody>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono">443</td>
+    <td>HTTPS</td>
+    <td class="right mono">3.8 MB</td>
+    <td class="right mono">415</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="mono">443</td>
+    <td>HTTPS</td>
+    <td class="right mono">1.5 MB</td>
+    <td class="right mono">182</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">47.77.224.76</td>
+    <td class="mono">443</td>
+    <td>HTTPS</td>
+    <td class="right mono">74.7 KB</td>
+    <td class="right mono">85</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">3.233.158.26</td>
+    <td class="mono">443</td>
+    <td>HTTPS</td>
+    <td class="right mono">50.1 KB</td>
+    <td class="right mono">17</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">47.253.46.181</td>
+    <td class="mono">443</td>
+    <td>HTTPS</td>
+    <td class="right mono">41.7 KB</td>
+    <td class="right mono">111</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">46632</td>
+    <td>HTTPS</td>
+    <td class="right mono">40.6 KB</td>
+    <td class="right mono">645</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">42958</td>
+    <td>HTTPS</td>
+    <td class="right mono">37.8 KB</td>
+    <td class="right mono">454</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">198.11.173.22</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">38320</td>
+    <td>HTTPS</td>
+    <td class="right mono">37.1 KB</td>
+    <td class="right mono">32</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">42954</td>
+    <td>HTTPS</td>
+    <td class="right mono">25.7 KB</td>
+    <td class="right mono">266</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">54028</td>
+    <td>HTTPS</td>
+    <td class="right mono">24.6 KB</td>
+    <td class="right mono">279</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.56</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">24.3 KB</td>
+    <td class="right mono">65</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.74</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">23.5 KB</td>
+    <td class="right mono">42</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.50</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">18.8 KB</td>
+    <td class="right mono">53</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.253.230.85</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">58002</td>
+    <td>HTTPS</td>
+    <td class="right mono">14.4 KB</td>
+    <td class="right mono">21</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.241</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">11.7 KB</td>
+    <td class="right mono">20</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.96</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">11.0 KB</td>
+    <td class="right mono">9</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">47.253.230.85</td>
+    <td class="mono">443</td>
+    <td>HTTPS</td>
+    <td class="right mono">10.9 KB</td>
+    <td class="right mono">93</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.49</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">10.0 KB</td>
+    <td class="right mono">17</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">54034</td>
+    <td>HTTPS</td>
+    <td class="right mono">9.7 KB</td>
+    <td class="right mono">48</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">46624</td>
+    <td>HTTPS</td>
+    <td class="right mono">9.7 KB</td>
+    <td class="right mono">59</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.61</td>
+    <td class="mono ip">239.255.255.250</td>
+    <td class="mono">1900</td>
+    <td>SSDP</td>
+    <td class="right mono">9.4 KB</td>
+    <td class="right mono">19</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">142.250.69.163</td>
+    <td class="mono">443</td>
+    <td>UDP/443</td>
+    <td class="right mono">8.8 KB</td>
+    <td class="right mono">13</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">54032</td>
+    <td>HTTPS</td>
+    <td class="right mono">8.7 KB</td>
+    <td class="right mono">14</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.237</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">8.4 KB</td>
+    <td class="right mono">18</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">42924</td>
+    <td>HTTPS</td>
+    <td class="right mono">8.3 KB</td>
+    <td class="right mono">15</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">42940</td>
+    <td>HTTPS</td>
+    <td class="right mono">8.3 KB</td>
+    <td class="right mono">15</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.73</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">7.9 KB</td>
+    <td class="right mono">18</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.236</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">7.9 KB</td>
+    <td class="right mono">18</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.149</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">7.6 KB</td>
+    <td class="right mono">20</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">142.250.69.163</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">42192</td>
+    <td>UDP/42192</td>
+    <td class="right mono">7.6 KB</td>
+    <td class="right mono">13</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">3.5.79.202</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">54014</td>
+    <td>HTTPS</td>
+    <td class="right mono">7.5 KB</td>
+    <td class="right mono">14</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">46648</td>
+    <td>HTTPS</td>
+    <td class="right mono">7.3 KB</td>
+    <td class="right mono">14</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">52.92.161.240</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">46616</td>
+    <td>HTTPS</td>
+    <td class="right mono">7.3 KB</td>
+    <td class="right mono">13</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.77.224.76</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">53978</td>
+    <td>HTTPS</td>
+    <td class="right mono">7.2 KB</td>
+    <td class="right mono">75</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">142.251.45.142</td>
+    <td class="mono">443</td>
+    <td>UDP/443</td>
+    <td class="right mono">7.2 KB</td>
+    <td class="right mono">8</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">8.222.184.151</td>
+    <td class="mono">80</td>
+    <td>HTTP</td>
+    <td class="right mono">6.9 KB</td>
+    <td class="right mono">21</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono ip">47.251.37.199</td>
+    <td class="mono">443</td>
+    <td>HTTPS</td>
+    <td class="right mono">6.8 KB</td>
+    <td class="right mono">47</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.19</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">6.8 KB</td>
+    <td class="right mono">15</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.1</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">6.3 KB</td>
+    <td class="right mono">17</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.83</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">6.2 KB</td>
+    <td class="right mono">16</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.251.37.199</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">49848</td>
+    <td>HTTPS</td>
+    <td class="right mono">6.0 KB</td>
+    <td class="right mono">14</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.67</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">6.0 KB</td>
+    <td class="right mono">20</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.0</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">5.9 KB</td>
+    <td class="right mono">13</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.59</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">5.8 KB</td>
+    <td class="right mono">16</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.133</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">5.8 KB</td>
+    <td class="right mono">6</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.88.94.93</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">36144</td>
+    <td>HTTPS</td>
+    <td class="right mono">5.8 KB</td>
+    <td class="right mono">14</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">172.16.95.98</td>
+    <td class="mono ip">224.0.0.251</td>
+    <td class="mono">5353</td>
+    <td>mDNS</td>
+    <td class="right mono">5.8 KB</td>
+    <td class="right mono">22</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.77.198.139</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">45570</td>
+    <td>HTTPS</td>
+    <td class="right mono">5.7 KB</td>
+    <td class="right mono">12</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">203.119.204.226</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">51754</td>
+    <td>HTTPS</td>
+    <td class="right mono">5.7 KB</td>
+    <td class="right mono">10</td>
+  </tr>
+  
+  <tr>
+    <td class="mono ip">47.251.64.28</td>
+    <td class="mono ip">172.16.94.211</td>
+    <td class="mono">36218</td>
+    <td>HTTPS</td>
+    <td class="right mono">5.7 KB</td>
+    <td class="right mono">12</td>
+  </tr>
+  
+  </tbody>
+</table>
+
+<p style="color: var(--dim); font-size: 0.8rem;">Showing top 50 of 333 connections.</p>
+
+
+
+<footer>Generated by TrafficLens</footer>
+
+</body>
+</html>

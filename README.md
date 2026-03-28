@@ -8,9 +8,11 @@ That blindness creates real problems. All of us have been on the Thinkspace wifi
 
 ## Solve: 
 
-This tool gives you complete visibility into your local network. It automatically identifies traffic, surfaces mDNS announcements, tracks peer-to-peer activity, measures connection velocity, and generates clean reports showing every host that touched your system, what they tried to do, and how aggressively they’re probing. You go from confused to confident about what’s actually on your network.
+This tool gives you complete visibility into your local network. It tells you about connections to your system in real time.  It automatically identifies traffic, surfaces mDNS announcements, tracks peer-to-peer activity, measures connection velocity, and generates clean reports showing every host that touched your system, what they tried to do, and how aggressively they’re probing. You go from confused to confident about what’s actually on your network.
 
 
+
+## for nerds:
 
 Local network traffic analyzer. Discovers hosts via ARP, captures packets, classifies protocols, renders a live terminal dashboard, and generates post-capture reports.
 
@@ -28,6 +30,23 @@ pip install -r requirements.txt
 
 # List available interfaces
 python3 -m trafficlens interfaces
+
+# Runningboard:  the dash
+Terminal 1: Make sure the dashboard is running,
+```  
+cd ~/Development/TrafficLens/Dash
+source ~/.nvm/nvm.sh && nvm use 22
+npm run dev
+```
+
+
+Terminal 2: Set env vars for the Python CLI,
+```
+export TRAFFICLENS_BACKEND_URL=https://undwelfmiretpntyzewb.supabase.co/
+export TRAFFICLENS_SUPABASE_KEY=yourkeyyourkey
+```
+
+Have the dashboard open in a browser tab (http://localhost:5173/) but don't show it yet
 
 # Run a 60-second capture on auto-detected interface
 sudo python3 -m trafficlens

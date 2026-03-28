@@ -1,15 +1,52 @@
 # TrafficLens
 
 ## Pain: 
-Most people have no idea what’s actually happening on their Wi-Fi. Devices connect, send traffic, make requests—but you’re flying blind. You don’t know which IoT gadgets are phoning home, what peer-to-peer traffic is happening, or how aggressive devices are being with connection attempts.
+Most people have no idea what’s actually happening on their Wi-Fi. Devices connect, send traffic, make requests—but you’re flying blind. 
+
+When you're on community wifi, you don’t know which systems are probing yours, what peer-to-peer traffic is happening, or how aggressive devices are being with connection attempts.
 
 ## Agitate: 
-That blindness creates real problems. All of us have been on the Thinkspace wifi.  We discovered lots of network discovery traffic touching our system.  Were you aware of any probles?  You can’t assess security risks because you don’t see who’s talking to whom. You can’t optimize your network because you don’t know traffic patterns. You can’t even answer basic questions like, “What devices tried to reach my machine today?” You’re stuck guessing or digging through raw packet captures that take hours to parse manually.
+That blindness creates real problems. All of us have been on the Thinkspace wifi.  
+
+In the time we've been here, We discovered lots discovery traffic touching our system.
+
+Were you aware of any probles?  
+
+You can’t assess security risks because you don’t see who’s trying to probe your system. You can’t answer basic questions like, “What devices tried to reach my machine today?” 
 
 ## Solve: 
 
-This tool gives you complete visibility into your local network. It tells you about connections to your system in real time.  It automatically identifies traffic, surfaces mDNS announcements, tracks peer-to-peer activity, measures connection velocity, and generates clean reports showing every host that touched your system, what they tried to do, and how aggressively they’re probing. You go from confused to confident about what’s actually on your network.
+TrafficLens is a network traffic analysis tool runs wifi network threat detection heuristics that tell you who tried touching your system. 
 
+This tool gives you complete visibility into your local network. It tells you who is connecting to your system in real time.  You go from confused to confident about what’s actually on your network.
+
+
+Here's how we start the scanner that monitors your laptop for connection requests:
+
+```
+sudo -E python3 -m trafficlens -i wlp0s20f3 -d 30 -o ./demo_scan
+```
+
+and here we take a look at the summary:
+
+```
+head -40 demo_scan/trafficlens_report.md
+```
+
+Here we upload our data to supabase:
+```
+sudo -E python3 -m trafficlens -i wlp0s20f3 -d 30 --upload
+```
+Say: "This pushes the scan metadata, all discovered hosts, connection pairs, and protocol breakdowns up to Supabase in one shot."
+
+Click the scan row.
+
+Say: "When I select a scan, three things happen. First, it loads all the host and connection data from Supabase. Then it runs six client-side threat detection heuristics -- looking for port scans, SSH brute force attempts, RDP scanning, SMB lateral movement, high-volume anomalies, and DNS tunneling patterns."
+
+Point to the panels:
+Threat Inventory table: "This table shows every host classified by threat level. You can sort by any column -- let's sort by threat level to see what it flagged."
+Intrusion Attempt Feed: "Over here is the event feed showing individual connections color-coded by severity."
+Top Attackers chart: "And down here, the Top Attackers chart shows which hosts triggered the most threat indicators, with a bar chart and breakdown by attack type."
 
 
 ## for nerds:

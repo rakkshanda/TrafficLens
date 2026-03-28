@@ -1,0 +1,180 @@
+Build an enterprise AI data leakage risk monitoring and audit agent in Python.
+
+Before writing any code, follow this phased development pipeline. Each phase produces a deliverable that the next phase consumes. Do not skip phases.
+
+--- PHASE 1: PRD DRAFTING ---
+
+Produce a Product Requirements Document (PRD) that defines:
+
+Core User Experiences (CUEs):
+Detect Sensitive Data Exposure via AI/Software Usage
+Monitor employee interactions with AI tools (LLMs, SaaS apps, local tools)
+Identify potential leakage of:
+PII (personally identifiable information)
+Financial data
+Source code / IP
+Internal documents
+Track Information Flow Across Systems
+Map data movement between:
+Local machines
+SaaS platforms (e.g., AI tools, cloud storage)
+Internal enterprise systems
+Build traceable “data lineage” per interaction/session
+Real-Time Risk Detection & Alerting
+Detect high-risk behaviors:
+Copy-paste into AI tools
+Uploading sensitive files
+Prompt injection with proprietary info
+Trigger alerts with severity levels (low / medium / high)
+Audit Log & Compliance Reporting
+Generate immutable audit logs including:
+User ID / device / timestamp
+Action taken (prompt, upload, API call)
+Data classification (sensitive / non-sensitive)
+Risk score
+Export compliance-ready reports (SOC2, ISO27001, internal audits)
+Historical Analysis & Risk Dashboard
+Provide dashboards showing:
+Top risky users / teams
+Most exposed data categories
+Trend of leakage risk over time
+Enable forensic investigation of past incidents
+For each CUE, define:
+Measurable success criteria
+e.g., ≥95% detection accuracy for sensitive data patterns
+<2s latency for real-time alerts
+100% audit log completeness for tracked events
+Failure modes and edge cases
+Encrypted traffic (cannot inspect payload)
+Shadow AI tools not integrated with system
+False positives (e.g., dummy/test data flagged as sensitive)
+Privacy/legal constraints (employee monitoring boundaries)
+Offline or local-only interactions not captured
+Required vs. nice-to-have scope
+Required: detection, logging, auditability
+Nice-to-have: behavioral analytics, predictive risk scoring
+--- PHASE 2: TECH STACK DECISION ---
+
+Evaluate and document tech stack selection with rationale:
+
+Data Collection Layer
+Endpoint monitoring: OS-level hooks vs browser extension vs proxy-based capture
+Network inspection: packet capture vs HTTPS proxy vs API integration
+AI Usage Detection
+Integration approach:
+API-level logging (OpenAI, etc.)
+Browser DOM monitoring
+Clipboard tracking
+Sensitive Data Detection
+Regex/rule-based vs ML/NLP classifiers vs hybrid approach
+Use of pre-trained models vs custom fine-tuned models
+Data Lineage & Storage
+Graph database (Neo4j) vs relational DB (Postgres)
+Event streaming: Kafka vs lightweight queue
+Audit Logging
+Immutable logs: append-only DB vs blockchain-style hashing
+Log format: JSONL vs structured schema
+Backend & API
+FastAPI vs Flask vs Django
+Auth: OAuth / SSO integration
+Dashboard & Reporting
+Streamlit vs React dashboard vs Grafana
+Report generation: Jinja2 (HTML), PDF export
+Async / Processing Strategy
+asyncio vs event-driven (Kafka consumers) vs microservices
+
+Write decisions into a TECH_STACK.md at the project root.
+Each decision must include:
+
+Options considered
+Option selected
+Rationale (scalability, security, compliance, latency)
+--- PHASE 3: EXPERIMENT & IMPLEMENTATION ---
+
+Build the system with this modular architecture:
+
+collection/
+→ endpoint hooks, browser monitoring, API ingestion
+detection/
+→ sensitive data classification (rules + ML)
+risk_engine/
+→ scoring logic, anomaly detection, policy evaluation
+lineage/
+→ data flow tracking and relationship mapping
+audit/
+→ immutable logging, compliance export
+alerts/
+→ real-time alerting system (rules + thresholds)
+dashboard/
+→ visualization and reporting
+api/
+→ backend services (FastAPI endpoints)
+cli.py
+→ CLI for local testing and debugging
+requirements.txt and README.md
+→ setup, architecture overview, security considerations
+Implementation Requirements:
+Use modular, loosely coupled design
+Ensure data privacy and encryption (at rest + in transit)
+Implement role-based access control (RBAC)
+Support multi-tenant enterprise environments
+Ensure audit logs are tamper-resistant
+--- PHASE 4: TESTING ---
+
+Define and implement:
+
+Unit Tests
+Sensitive data detection accuracy
+Risk scoring correctness
+Integration Tests
+End-to-end flow:
+User action → detection → logging → alert
+Security Testing
+Attempt bypass scenarios:
+Encrypted channels
+Obfuscated data
+Validate access controls
+Performance Testing
+Latency of real-time detection
+Throughput under enterprise load
+--- PHASE 5: VALIDATION ---
+
+After tests pass, perform a validation sweep:
+
+Simulate real enterprise scenarios:
+Employee pastes sensitive data into AI tool
+File upload to external SaaS
+Confirm:
+Risk is detected correctly
+Alert is triggered
+Audit log is complete and traceable
+Verify:
+Dashboard reflects real-time data
+Reports are compliance-ready
+System handles concurrent users
+--- AGENT MEMORY ---
+
+Create a .AgentLessonsLearned directory at the project root.
+After each phase, write a lessons-learned file documenting:
+
+What worked well
+What required iteration
+Tradeoffs made (accuracy vs latency, privacy vs monitoring)
+Security/compliance implications
+Key architectural decisions
+
+Use naming convention:
+LL_<phase_number>_<short_description>.md
+
+(Optional but HIGHLY RECOMMENDED ADD-ON)
+--- PHASE 6: GOVERNANCE & POLICY LAYER ---
+
+Define:
+
+Configurable enterprise policies:
+“No PII in external AI tools”
+“No source code outside approved repos”
+Policy engine:
+Rule-based + risk scoring thresholds
+Exception workflows:
+Manager approval / audit trail

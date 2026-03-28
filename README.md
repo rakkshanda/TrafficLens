@@ -21,7 +21,7 @@ python3 -m trafficlens interfaces
 sudo python3 -m trafficlens
 
 # Run on a specific interface for 30 seconds
-sudo python3 -m trafficlens -i wlp0s20f3 -d 30
+sudo -E python3 -m trafficlens -i wlp0s20f3 -d 30
 
 # Run indefinitely until Ctrl+C
 sudo python3 -m trafficlens -d 0
